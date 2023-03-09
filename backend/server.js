@@ -18,7 +18,7 @@ const port = process.env.PORT | 3001
 // app.use('/',(req,res)=>{
 //     res.json({msg:"hello"})
 // })
-
+app.use(cors())
 app.use('/api/v1/user',userRoutes)
 app.use('/api/v1/chat', chatRoutes)
 app.use('/api/v1/message', msgRoutes)
