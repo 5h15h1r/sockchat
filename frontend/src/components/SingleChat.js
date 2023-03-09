@@ -15,7 +15,7 @@ import animationData from "../animations/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
-const ENDPOINT = "https://sampledeployment.onrender.com"; // "http://localhost:3001/"; -> dev endpoint
+const ENDPOINT = "https://sampledeployment.onrender.com"; // "http://localhost:3001/"; -> \ deployment
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
