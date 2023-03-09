@@ -3,6 +3,7 @@ require('express-async-errors')
 
 const express = require('express')
 const path = require('path') 
+var cors = require('cors')
 const app = express()
 app.use(express.json())
 
@@ -18,7 +19,9 @@ const port = process.env.PORT | 3001
 // app.use('/',(req,res)=>{
 //     res.json({msg:"hello"})
 // })
-app.use(cors())
+app.use(cors({
+    origin:["https://sockchat.onrender.com"]
+}))
 app.use('/api/v1/user',userRoutes)
 app.use('/api/v1/chat', chatRoutes)
 app.use('/api/v1/message', msgRoutes)
@@ -50,7 +53,7 @@ const server = app.listen(port,console.log(`server is listening on http://localh
 const io = require('socket.io')(server,{
     pingTimrOut: "60000",
     cors:{
-        origin: "http://localhost:3000",
+        origin: ["http://localhost:3000","https://sockchat.onrender.com"],
     }
 });
 
