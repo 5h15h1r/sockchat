@@ -41,7 +41,7 @@ app.use('/api/v1/message', msgRoutes)
 //     res.send("API is running..");
 //   });
 // }
-
+// "proxy": "https://sampledeployment.onrender.com/",
 // --------------------------deployment------------------------------
 
 
@@ -53,7 +53,7 @@ const server = app.listen(port,console.log(`server is listening on http://localh
 const io = require('socket.io')(server,{
     pingTimrOut: "60000",
     cors:{
-        origin: ["http://localhost:3000","https://sockchat.onrender.com"],
+        origin: ["https://sockchat.onrender.com"],
     }
 });
 
