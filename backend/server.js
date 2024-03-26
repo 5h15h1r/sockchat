@@ -19,9 +19,9 @@ const port = process.env.PORT | 3001
 // app.use('/',(req,res)=>{
 //     res.json({msg:"hello"})
 // })
-// app.use(cors({
-//     origin:["https://sockchat.onrender.com"]
-// }))
+app.use(cors({
+    origin:["https://sockchat.onrender.com"]
+}))
 app.use('/api/v1/user',userRoutes)
 app.use('/api/v1/chat', chatRoutes)
 app.use('/api/v1/message', msgRoutes)
@@ -53,7 +53,7 @@ const server = app.listen(port,console.log(`server is listening on http://localh
 const io = require('socket.io')(server,{
     pingTimrOut: "60000",
     cors:{
-        origin: ["https://sockchat.onrender.com"],
+        origin: ["http://localhost:3000"],
     }
 });
 
